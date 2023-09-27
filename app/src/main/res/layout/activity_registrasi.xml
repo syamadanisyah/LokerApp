@@ -82,7 +82,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alamat"
+            android:text="Konfirmasi Password"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"/>
@@ -90,15 +90,34 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:hint="No_telp"
+            android:hint="Konfirmasi Password"
             android:paddingLeft="10dp"
             android:textColorHint="@color/black"
             android:background="@drawable/shape"
             android:inputType="textPassword"
-            android:id="@+id/txtalamat"
+            android:id="@+id/txtkonfirmasipassword"
 
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="masukan email"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/black"
+            android:background="@drawable/shape"
+            android:inputType="textPassword"
+            android:id="@+id/txtemail"
+
+            />
 
 
 
@@ -123,30 +142,12 @@
 
     </RelativeLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/relativelayout"
-        android:text="Login"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/white"
-        app:cornerRadius="10dp"
-        app:strokeColor="@color/white"
-        app:strokeWidth="4dp"
-        style="@style/Widget.Material3.Button.OutlinedButton"
-        android:id="@+id/btnlogin"
-        >
 
-    </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="280dp"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
+        app:layout_constraintTop_toBottomOf="@id/relativelayout"
         android:text="Registrasi"
         android:textSize="20sp"
         android:textStyle="bold"

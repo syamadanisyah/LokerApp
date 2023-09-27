@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home"
+    android:background="@color/biru"
+>
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:id="@+id/atas"
+            android:layout_marginTop="-80dp"
+            android:background="@drawable/shape2"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="130dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="30dp"
+                android:id="@+id/logo"
+                />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:hint="Cari Lowongan"
+            android:textColorHint="@color/stroke"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_pencarian"
+            android:drawableLeft="@drawable/logo_cari"
+            android:layout_marginTop="-30dp"
+
+
+            />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"/>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Lowongan terbaru"
+    android:textColor="@color/white"
+    android:paddingLeft="30dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            >
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lowongan Rekomendasi"
+            android:textColor="@color/white"
+            android:paddingLeft="30dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            >
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
