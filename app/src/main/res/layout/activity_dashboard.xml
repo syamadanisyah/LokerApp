@@ -6,8 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".dashboard">
 
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toTopOf="@+id/navigasi_bottom"
+    android:id="@+id/frame"
+    ></FrameLayout>
 
 
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:menu="@menu/nav_bar"
+    app:labelVisibilityMode="selected"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:id="@+id/navigasi_bottom">
+
+</com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
