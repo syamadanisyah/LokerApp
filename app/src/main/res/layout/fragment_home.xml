@@ -44,7 +44,7 @@
             android:background="@drawable/background_pencarian"
             android:drawableLeft="@drawable/logo_cari"
             android:layout_marginTop="-30dp"
-
+android:elevation="20dp"
 
             />
 
@@ -61,11 +61,12 @@
     android:textColor="@color/white"
     android:paddingLeft="30dp"/>
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            >
-        </HorizontalScrollView>
+      <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+          android:layout_height="130dp"
+          android:id="@+id/h_horizon_recycler">
+
+      </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:layout_width="match_parent"

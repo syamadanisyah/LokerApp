@@ -3,17 +3,40 @@ package com.c3.lokerapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link home#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class home extends Fragment {
+
+
+private RecyclerView recyclerView;
+
+private adapter1 adapter;
+
+private List<item1>isi_item;
+
+private List<item1>isi_item(){
+List<item1> isiitem = new ArrayList<>();
+isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Lintang NTT","jl.Madyapura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Handayani","jl.Peru","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+    isiitem.add(new item1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
+
+return isiitem;
+}
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +82,12 @@ public class home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View tampilan = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+
+return tampilan;
+
     }
+
 }

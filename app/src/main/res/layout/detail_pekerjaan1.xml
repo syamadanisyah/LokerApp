@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/biru">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/cv1"
+        android:background="@color/white"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="15dp"
+
+       android:layout_marginTop="-20dp"
+        >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Pekerjaan"
+        android:textSize="20sp"
+        android:layout_marginStart="50dp"
+
+      />
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cv2"
+            android:backgroundTint="@color/white"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/stroke"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    >
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/logo"
+        android:id="@+id/logo_perusahaan"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Perusahaan"
+        android:textSize="15sp"
+        android:layout_toRightOf="@+id/logo_perusahaan"
+        android:id="@+id/nama_perusahaan"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat perusahaan"
+        android:textSize="15sp"
+        android:layout_below="@+id/logo_perusahaan"
+        android:id="@+id/alamat_perusahaan"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full time - kerja lapangan"
+        android:textSize="15sp"
+        android:layout_below="@+id/alamat_perusahaan"
+        android:id="@+id/jam_kerja"
+        android:layout_marginTop="5dp"
+        android:paddingStart="15dp"/>
+</RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cv3"
+            android:backgroundTint="@color/white"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="15dp"
+            app:strokeColor="@color/stroke"
+            app:strokeWidth="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pendidikan"
+                    android:textSize="15sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_judul_pendidikan"
+                    android:paddingStart="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pendidikan S1/D4"
+                    android:textSize="10sp"
+                    android:layout_below="@+id/tv_judul_pendidikan"
+                    android:id="@+id/tv_title"
+                    android:paddingStart="15dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Usia"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/tv_title"
+                    android:id="@+id/tv_usia"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pendidikan S1/D4"
+                    android:textSize="10sp"
+                    android:layout_below="@+id/tv_usia"
+                    android:id="@+id/tv_isi_usia"
+                    android:paddingStart="15dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textSize="15sp"
+                    android:layout_toRightOf="@+id/tv_judul_pendidikan"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv_jenis_kelamin"
+                    android:paddingStart="15dp"
+                    android:layout_marginStart="70dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laki-Laki / Perempuan"
+                    android:textSize="10sp"
+                    android:layout_toRightOf="@+id/tv_title"
+                    android:layout_below="@+id/tv_jenis_kelamin"
+                    android:layout_marginStart="70dp"
+                    android:id="@+id/tv_isi_jk"
+                    android:paddingStart="15dp"
+                    android:layout_marginBottom="20dp"
+                   />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengalaman"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/tv_isi_jk"
+                    android:layout_toRightOf="@+id/tv_usia"
+                    android:id="@+id/tv_pengalaman"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="15dp"
+                    android:layout_marginStart="125dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Frash Graduate/ 1 tahun"
+                    android:textSize="10sp"
+                    android:layout_toRightOf="@+id/tv_title"
+                    android:layout_below="@+id/tv_pengalaman"
+                    android:layout_marginStart="70dp"
+                    android:id="@+id/tv_isi_pengalaman"
+                    android:paddingStart="15dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/cv4"
+            android:backgroundTint="@color/white"
+            app:cardElevation="8dp"
+            app:strokeColor="@color/stroke"
+            app:strokeWidth="2dp"
+            app:cardCornerRadius="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diskripsi Pekerjaan"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isi diskripsi pekerjaan"
+                    android:id="@+id/tv_diskripsi"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kualifikasi / Syarat"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Syarat yang harus terpenuhi "
+                    android:id="@+id/tv_kualifikasi"
+                    android:paddingStart="15dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hari kerja"
+                        android:id="@+id/tv_jadwal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="senin - jumat"
+                        android:id="@+id/tv_isi_jadwal"
+                        android:layout_below="@+id/tv_jadwal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Kerja"
+                        android:id="@+id/tv_jam"
+                        android:layout_toRightOf="@+id/tv_jadwal"
+                        android:layout_marginStart="234dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:00 - 15:00"
+                        android:id="@+id/tv_isi_jam"
+                        android:layout_toRightOf="@+id/tv_isi_jadwal"
+                        android:layout_below="@+id/tv_jadwal"
+                        android:layout_marginStart="200dp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
