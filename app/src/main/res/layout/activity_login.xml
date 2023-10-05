@@ -133,12 +133,11 @@ android:drawableLeft="@drawable/person"
    <ImageView
        android:layout_width="50dp"
        android:layout_height="45dp"
-android:src="@drawable/icon_google"
+       android:src="@drawable/LoginGoogle1"
        app:layout_constraintTop_toBottomOf="@+id/textMasukanDengan"
        app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintLeft_toLeftOf="parent"
        android:layout_marginTop="10dp"
-  android:background="@drawable/background_google"
        android:id="@+id/google"
        />
 
