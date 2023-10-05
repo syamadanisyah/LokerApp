@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LokerApp"
         tools:targetApi="31">
         <activity
+            android:name=".detail_pekerjaan"
+            android:exported="false" />
+        <activity
             android:name=".splashScreen"
             android:exported="false" />
         <activity
