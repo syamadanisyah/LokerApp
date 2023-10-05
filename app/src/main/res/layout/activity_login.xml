@@ -140,7 +140,6 @@ android:src="@drawable/icon_google"
        android:layout_marginTop="10dp"
   android:background="@drawable/background_google"
        android:id="@+id/google"
-       android:visibility="gone"
        />
 
 <TextView
