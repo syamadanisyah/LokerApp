@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" REGISTRASI "
+        android:text=" Buat Akun Baru "
         android:gravity="center"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -70,7 +70,8 @@
             android:text="Password"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -86,10 +87,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="nama lengkap"
+            android:text="Nama Lengkap"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -106,10 +108,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="no telpon"
+            android:text="No Telpon"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -126,10 +129,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="alamat"
+            android:text="Alamat"
             android:textColor="@color/white"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -152,20 +156,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/layoutinput"
         android:paddingEnd="18dp"
-        android:id="@+id/relativelayout">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="lupa password"
-            android:textColor="@color/white"
-            android:gravity="end"
-            android:textSize="16sp"
-            />
-
-    </RelativeLayout>
-
-
+        android:id="@+id/relativelayout"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="280dp"
@@ -177,7 +168,7 @@
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="40dp"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:strokeColor="@color/white"
