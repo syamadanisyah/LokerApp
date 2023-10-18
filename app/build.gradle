@@ -44,4 +44,12 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    //otp view
+    implementation 'com.github.appsfeature:otp-view:1.0'
+
+
+    //akun google
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
 }

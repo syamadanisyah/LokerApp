@@ -35,13 +35,13 @@
             android:name=".lupa_password3"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".registrasi"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".registrasi"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

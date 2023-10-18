@@ -1,4 +1,4 @@
-package com.c3.lokerapp;
+package com.c3.lokerapp.Home;
 
 public class item1 {
 

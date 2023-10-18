@@ -12,12 +12,13 @@ public interface RetrofitEndPoint {
     @FormUrlEncoded
     @POST("insertregistrasi.php")
     Call<UsersResponse> registerCaker(
-            @Field("id_pelamar") String idPelamar,
+            @Field("id_pelamar") String id_Pelamar,
             @Field("username") String username,
             @Field("password") String password,
             @Field("nama_lengkap") String nama_lengkap,
             @Field("no_telp") String no_telp,
-            @Field("alamat") String alamat
+            @Field("alamat") String alamat,
+            @Field("email") String email
     );
 
     @FormUrlEncoded

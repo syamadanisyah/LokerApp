@@ -1,4 +1,4 @@
-package com.c3.lokerapp;
+package com.c3.lokerapp.Home;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.c3.lokerapp.R;
 
 import java.util.List;
 

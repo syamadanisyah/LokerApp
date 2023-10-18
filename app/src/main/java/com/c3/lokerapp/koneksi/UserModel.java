@@ -25,6 +25,11 @@ public class UserModel {
     @SerializedName("alamat")
     private String alamat;
 
+
+    @Expose
+    @SerializedName("email")
+    private String email;
+
    /* @Expose
     @SerializedName("level")
     private String level;*/
@@ -33,13 +38,14 @@ public class UserModel {
     @SerializedName("user_photo")
     private String userPhoto;*/
 
-    public UserModel(String id_pelamar, String username, String password, String nama_lengkap, String no_telp, String alamat) {
+    public UserModel(String id_pelamar, String username, String password, String nama_lengkap, String no_telp, String alamat, String email) {
         this.id_pelamar = id_pelamar;
         this.username = username;
         this.password = password;
         this.nama_lengkap = nama_lengkap;
         this.no_telp = no_telp;
         this.alamat = alamat;
+        this.email = email;
     }
 
     public String getId_pelamar() {
@@ -88,5 +94,13 @@ public class UserModel {
 
     public void setAlamat(String alamat) {
         this.alamat = alamat;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

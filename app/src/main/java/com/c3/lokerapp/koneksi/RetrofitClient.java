@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    public static final String BASE_URL = "http://192.168.155.71/pertama/";
+    public static final String BASE_URL = "http://192.168.137.1/pertama/";
 
 
     public static final String SUCCESSFUL_RESPONSE = "success";

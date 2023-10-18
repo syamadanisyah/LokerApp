@@ -20,7 +20,7 @@ public class registrasi extends AppCompatActivity {
 
 
     MaterialButton btn;
-    EditText user,passw,nama,noTelp,alamat;
+    EditText user,passw,nama,noTelp,alamat,email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class registrasi extends AppCompatActivity {
         nama = findViewById(R.id.txtnama_lengkap);
         noTelp = findViewById(R.id.txtno_telp);
         alamat = findViewById(R.id.txtalamat);
+        email = findViewById(R.id.txtemail);
 
 
         btn = findViewById(R.id.btnregis);
@@ -39,7 +40,7 @@ public class registrasi extends AppCompatActivity {
         btn.setOnClickListener(v -> {
             RetrofitClient.getInstance().registerCaker(
                     "id34", user.getText().toString(), passw.getText().toString(), nama.getText().toString(),
-                    noTelp.getText().toString(), alamat.getText().toString()
+                    noTelp.getText().toString(), alamat.getText().toString(),email.getText().toString()
             ).enqueue(new Callback<UsersResponse>() {
                 @Override
                 public void onResponse(Call<UsersResponse> call, Response<UsersResponse> response) {
