@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 public interface RetrofitEndPoint {
 
     @FormUrlEncoded
-    @POST("insertregistrasi.php")
+    @POST("registrasi.php")
     Call<UsersResponse> registerCaker(
             @Field("id_pelamar") String id_Pelamar,
             @Field("username") String username,
@@ -25,6 +25,13 @@ public interface RetrofitEndPoint {
     @POST("checklogin.php")
     Call<UsersResponse> loginCaker(
             @Field("username") String username,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("controllers/mobile/users/login.php")
+    Call<UsersResponse> loginHaqi(
+            @Field("email") String username,
             @Field("password") String password
     );
 

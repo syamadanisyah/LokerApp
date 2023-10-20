@@ -3,6 +3,7 @@ package com.c3.lokerapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -26,7 +27,7 @@ import retrofit2.Response;
 public class Login extends AppCompatActivity {
 
 
-    EditText user,pass;
+    EditText user, pass;
     MaterialButton btnlogin;
 
     private GoogleUsers googleUsers;
@@ -56,25 +57,28 @@ public class Login extends AppCompatActivity {
                         .enqueue(new Callback<UsersResponse>() {
                             @Override
                             public void onResponse(Call<UsersResponse> call, Response<UsersResponse> response) {
-                                Log.e("test", "oi");
-                                if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
+                                Toast.makeText(Login.this, "ON RESPONSE", Toast.LENGTH_SHORT).show();
+                                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
 
                                     Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_SHORT).show();
 
 
                                     // jajalen login
                                     startActivity(new Intent(Login.this, dashboard.class)); // iki ne sg salah
-                                }else{
+                                } else {
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
 
                             @Override
                             public void onFailure(Call<UsersResponse> call, Throwable t) {
-                                Log.e("test", "err");
+                                t.printStackTrace();
+                                Toast.makeText(Login.this, "ON FAILURE " + t.getMessage(), Toast.LENGTH_SHORT).show();
                                 Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
+
+//                Toast.makeText(Login.this, "END", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -91,52 +95,48 @@ public class Login extends AppCompatActivity {
         });
 
 
-
         pass.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-final int right = 2;
+                final int right = 2;
 
-if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
 
-    if(motionEvent.getRawX()>= pass.getRight()-pass.getCompoundDrawables()[right].getBounds().width()){
-int pilih = pass.getSelectionEnd();
-if(passwordvisible){
+                    if (motionEvent.getRawX() >= pass.getRight() - pass.getCompoundDrawables()[right].getBounds().width()) {
+                        int pilih = pass.getSelectionEnd();
+                        if (passwordvisible) {
 
 // menaruh gambar lain disini
-    pass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
+                            pass.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility_off, 0);
 
-    //fungsi untuk hiden password
-pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-passwordvisible = false;
-
-
-}else {
-
-    // menaruh gambar lain disini
-    pass.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility,0);
-
-    //fungsi untuk hiden password
-    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-    passwordvisible = true;
+                            //fungsi untuk hiden password
+                            pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordvisible = false;
 
 
+                        } else {
 
-}
+                            // menaruh gambar lain disini
+                            pass.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.visibility, 0);
 
-pass.setSelection(pilih);
+                            //fungsi untuk hiden password
+                            pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordvisible = true;
 
-return true;
-    }
-}
+
+                        }
+
+                        pass.setSelection(pilih);
+
+                        return true;
+                    }
+                }
 
 
                 return false;
             }
         });
-
-
-
 
 
     }

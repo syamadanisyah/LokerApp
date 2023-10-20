@@ -15,7 +15,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    public static final String BASE_URL = "http://192.168.137.1/pertama/";
+    public static final String BASE_URL = "http://172.16.103.162/pertama/";
+
+//    public static final String BASE_URL = "http://172.16.106.70/pertama/";
+
+
+//    public static final String BASE_URL = "http://172.16.106.58/arenafinder/";
 
 
     public static final String SUCCESSFUL_RESPONSE = "success";
@@ -34,8 +39,8 @@ public class RetrofitClient {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60,TimeUnit.SECONDS)
+                .connectTimeout(5, TimeUnit.SECONDS)
+                .writeTimeout(5,TimeUnit.SECONDS)
                 .build();
 
 

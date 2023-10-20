@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".simpan"
+    tools:context=".simpan.simpan"
     android:background="@color/biru">
 
 
@@ -29,10 +29,12 @@
     app:cardCornerRadius="15dp">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+<ImageView
+    android:layout_width="120dp"
+    android:layout_height="80dp"
+    android:src="@drawable/logo"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"/>
 
 </com.google.android.material.card.MaterialCardView>
 
@@ -43,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/cv1"
-            tools:listitem="@layout/item_rc2">
+            tools:listitem="@layout/item_rc2"
+            android:id="@+id/recyview_simpan">
 
         </androidx.recyclerview.widget.RecyclerView>
 
