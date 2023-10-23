@@ -25,7 +25,6 @@ import java.util.List;
  */
 public class simpan extends Fragment {
 
-
     private List<item1_simpan1> data_item;
 
     private RecyclerView recview_simpan;
@@ -33,31 +32,28 @@ public class simpan extends Fragment {
     private adapter_simpan adapter_s;
 
 
-    private List<item1_simpan1> data_item(){
+    private List<item1_simpan1> data_item() {
         List<item1_simpan1> data_item = new ArrayList<>();
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.Indroprima","jl.patimura","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.Lintang NTT","jl.Madyapura","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.Handayani","jl.Peru","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.fajartimur","jl.patih putih","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.mandala indo","jl.biru senja","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.senja sekunder","jl.raja","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.krikwak","jl.raja si singa","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.kirawak","jl.mura","Pendirikan S1/D4"));
-        data_item.add(new item1_simpan1(R.drawable.logo,"Pt.tb timur","jl.patimura","Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.Indroprima", "jl.patimura", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.Lintang NTT", "jl.Madyapura", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.Handayani", "jl.Peru", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.fajartimur", "jl.patih putih", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.mandala indo", "jl.biru senja", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.senja sekunder", "jl.raja", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.krikwak", "jl.raja si singa", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.kirawak", "jl.mura", "Pendirikan S1/D4"));
+        data_item.add(new item1_simpan1(R.drawable.logo, "Pt.tb timur", "jl.patimura", "Pendirikan S1/D4"));
 
 
         return data_item;
     }
 
-    public void pindah_detail(){
+    public void pindah_detail() {
         Intent i = new Intent(requireActivity(), detail_pekerjaan.class);
         startActivity(i);
 
 
     }
-
-
-
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -104,21 +100,24 @@ public class simpan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View pindah= inflater.inflate(R.layout.fragment_simpan, container, false);
+        View pindah = inflater.inflate(R.layout.fragment_simpan, container, false);
 
-recview_simpan = pindah.findViewById(R.id.recyview_simpan);
+        recview_simpan = pindah.findViewById(R.id.recyview_simpan);
 
-adapter_s = new adapter_simpan(data_item,new adapter_simpan.pindah(){
+        data_item = data_item();
 
-    public void onItemCLick(int position){
-        Toast.makeText(requireContext(), data_item.get(position).nama_peru_i2, Toast.LENGTH_SHORT).show();
-    }
+        adapter_s = new adapter_simpan(data_item, new adapter_simpan.pindah() {
+
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(requireContext(), data_item.get(position).getNama_peru_i2(), Toast.LENGTH_SHORT).show();
+
+                pindah_detail();
 
 
-});
-
-
-
+            }
+        });
+        recview_simpan.setAdapter(adapter_s);
         // Inflate the layout for this fragment
         return pindah;
 

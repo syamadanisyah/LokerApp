@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -146,5 +147,25 @@ public class Login extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         googleUsers.onActivityResult(requestCode, resultCode, data);
+
+        if (googleUsers.isAccountSelected()){
+
+            RetrofitClient.getInstance().google_login(googleUsers.getUserData().getEmail()).enqueue(new Callback<UsersResponse>() {
+                @Override
+                public void onResponse(Call<UsersResponse> call, Response<UsersResponse> response) {
+                    if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
+                        startActivity(new Intent(Login.this, dashboard.class));
+
+                    }else{
+                        Toast.makeText(Login.this, "Email yang anda masukan belum terdaftar", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<UsersResponse> call, Throwable t) {
+
+                }
+            });
+        }
     }
 }

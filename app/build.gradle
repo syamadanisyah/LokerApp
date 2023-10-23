@@ -52,4 +52,8 @@ dependencies {
     //akun google
     implementation 'com.google.android.gms:play-services-auth:20.7.0'
 
+
+    //sdp depedency
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+
 }

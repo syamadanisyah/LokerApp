@@ -20,7 +20,7 @@
             android:name=".detail_pekerjaan"
             android:exported="false" />
         <activity
-            android:name=".splashScreen"
+            android:name=".dashboard"
             android:exported="false" />
         <activity
             android:name=".lupa_password2"
@@ -29,7 +29,7 @@
             android:name=".lupa_password1"
             android:exported="false" />
         <activity
-            android:name=".registrasi"
+            android:name=".splashScreen"
             android:exported="false" />
         <activity
             android:name=".lupa_password3"
@@ -41,7 +41,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name=".registrasi"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -13,6 +13,7 @@ public class splashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
         // Membuat Handler untuk mengatur delay dan berpindah ke aktivitas utama
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -24,6 +25,10 @@ public class splashScreen extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_SCREEN_DURATION);
+
+
+
+
 
     }
 }

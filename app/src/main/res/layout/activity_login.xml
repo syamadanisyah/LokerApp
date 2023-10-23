@@ -136,7 +136,9 @@ android:longClickable="false"
    <ImageView
        android:layout_width="50dp"
        android:layout_height="45dp"
+
        android:src="@drawable/logingoogle1"
+
        app:layout_constraintTop_toBottomOf="@+id/textMasukanDengan"
        app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintLeft_toLeftOf="parent"
