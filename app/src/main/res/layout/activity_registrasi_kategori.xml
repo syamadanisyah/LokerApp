@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglogin"
+    tools:context=".registrasi_kategori">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_23sdp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:text="pilih kategori\npekerjaan"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_21sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+
+<Spinner
+    android:id="@+id/pilihan1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/tv_1"
+    app:layout_constraintStart_toStartOf="@id/tv_1"
+    app:layout_constraintEnd_toEndOf="@id/tv_1"/>
+
+    <Spinner
+        android:id="@+id/pilihan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/pilihan1"
+       app:layout_constraintStart_toStartOf="@id/pilihan1"
+        app:layout_constraintEnd_toEndOf="@id/pilihan1"
+
+
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/tv_aturan_pilih"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:fontFamily="@font/poppinssemibold"
+        android:text="*pilih maksimal 2 kategori pekerjaan"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_1" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnregis3"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Selesai"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_aturan_pilih"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/_3sdp">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

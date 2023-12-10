@@ -4,158 +4,164 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@drawable/bglogin"
     android:layout_marginBottom="-150dp"
-    >
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/logo"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    android:id="@+id/logo"/>
+    android:background="@drawable/bglogin"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SELAMAT DATANG "
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        android:textColor="@color/white"
         android:id="@+id/ucapan"
-        />
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintTop_toBottomOf="@+id/ucapan"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    android:id="@+id/layoutinput"
-    android:padding="19dp"
-    >
-
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Username"
-    android:textColor="@color/white"
-    android:textSize="15sp"
-    android:textStyle="bold"/>
-
-    <EditText
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-android:background="@drawable/shape"
-        android:hint="Masukan username"
-        android:textColorHint="@color/black"
-        android:paddingLeft="10dp"
-        android:inputType="textEmailAddress"
-        android:id="@+id/txtusernamelog"
-android:drawableLeft="@drawable/person"
-
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:text="SELAMAT DATANG "
         android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-    <EditText
+    <LinearLayout
+        android:id="@+id/layoutinput"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="Masukan password"
-        android:paddingLeft="10dp"
-        android:textColorHint="@color/black"
-        android:background="@drawable/shape"
-        android:drawableLeft="@drawable/gembok"
-        android:inputType="textPassword"
-        android:id="@+id/txtpasswordlog"
-android:longClickable="false"
-        android:drawableEnd="@drawable/visibility_off"
-        />
-
-</LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layoutinput"
-        android:paddingEnd="18dp"
-        android:id="@+id/relativelayout">
+        android:orientation="vertical"
+        android:padding="@dimen/_18sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ucapan">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:text="Username"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <EditText
+            android:id="@+id/txtusernamelog"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/shape"
+            android:hint="Masukan Username"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsbold"
+            android:text="Password"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+
+        <EditText
+            android:id="@+id/txtpasswordlog"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/shape"
+            android:drawableLeft="@drawable/gembok"
+            android:paddingEnd="@dimen/_10sdp"
+            android:drawableEnd="@drawable/visibility_off"
+            android:hint="Masukan Password"
+            android:inputType="textPassword"
+            android:longClickable="false"
+            android:paddingLeft="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/_18sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutinput">
+
+        <TextView
+            android:id="@+id/txtlupapassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lupa password?"
-            android:textColor="@color/white"
+            android:fontFamily="@font/poppinssemibold"
             android:gravity="end"
-            android:textSize="16sp"
-            android:id="@+id/txtlupapassword"
-            />
+            android:text="lupa sandi ?"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
 
     </RelativeLayout>
 
-<com.google.android.material.button.MaterialButton
-    android:layout_width="280dp"
-    android:layout_height="50dp"
-    app:layout_constraintTop_toBottomOf="@+id/relativelayout"
-    android:text="Login"
-    android:textSize="20sp"
-    android:textStyle="bold"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    android:layout_marginTop="20dp"
-    android:textColor="@color/white"
-    app:cornerRadius="10dp"
-    app:strokeColor="@color/white"
-    app:strokeWidth="4dp"
-    style="@style/Widget.Material3.Button.OutlinedButton"
-    android:id="@+id/btnlogin"
-    >
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnlogin"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp"
+        app:cornerRadius="@dimen/_8sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativelayout"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/_3sdp">
 
-</com.google.android.material.button.MaterialButton>
+    </com.google.android.material.button.MaterialButton>
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-    android:text="Masukan Dengan"
-    android:layout_marginTop="8dp"
-    android:gravity="center"
-    android:textColor="@color/white"
-    android:id="@+id/textMasukanDengan"/>
+    <TextView
+        android:id="@+id/textMasukanDengan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:gravity="center"
+        android:text="Masukan Dengan"
+        android:fontFamily="@font/poppinssemibold"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
-   <ImageView
-       android:layout_width="50dp"
-       android:layout_height="45dp"
+    <ImageView
+        android:id="@+id/google"
+        android:layout_width="@dimen/_50sdp"
 
-       android:src="@drawable/logingoogle1"
+        android:layout_height="@dimen/_40sdp"
 
-       app:layout_constraintTop_toBottomOf="@+id/textMasukanDengan"
-       app:layout_constraintRight_toRightOf="parent"
-       app:layout_constraintLeft_toLeftOf="parent"
-       android:layout_marginTop="10dp"
-       android:id="@+id/google"
-       />
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/logingoogle1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMasukanDengan" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Buat Akun Baru"
-    app:layout_constraintTop_toBottomOf="@+id/google"
-    android:textColor="@color/white"
-    android:gravity="center"
-    android:layout_marginTop="20dp"/>
-
-
+    <TextView
+        android:id="@+id/tv_registrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center"
+        android:text="Buat Akun Baru"
+        android:fontFamily="@font/poppinssemibold"
+        android:textSize="@dimen/_13sdp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

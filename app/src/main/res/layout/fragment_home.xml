@@ -1,97 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Home.home"
-    android:background="@color/biru">
+    android:background="@color/biru"
+    tools:context=".Home.home">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:id="@+id/atas"
-            android:layout_marginTop="-80dp"
-            android:background="@drawable/shape2"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="130dp"
-                android:src="@drawable/logo"
-                android:layout_marginTop="30dp"
-                android:id="@+id/logo"
-                />
-
-        </RelativeLayout>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="360dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:hint="Cari Lowongan"
-            android:textColorHint="@color/stroke"
-            android:paddingLeft="10dp"
-            android:background="@drawable/background_pencarian"
-            android:drawableLeft="@drawable/logo_cari"
-            android:layout_marginTop="-30dp"
-android:elevation="20dp"
-
-            />
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/white"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lowongan terbaru"
-            android:textColor="@color/white"
-            android:paddingLeft="30dp"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_20sdp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:orientation="horizontal"
-            >
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/horizontalRecyclerView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                tools:listitem="@layout/item_rc"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                />
-
-        </LinearLayout>
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lowongan Rekomendasi"
-            android:textColor="@color/white"
-            android:paddingLeft="30dp"/>
+            android:orientation="vertical">
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            >
-        </HorizontalScrollView>
-    </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/atas"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="-80dp"
+                android:gravity="center">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:cardCornerRadius="23dp">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="140dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="37dp"
+                        android:src="@drawable/logo" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searching_home"
+                android:layout_width="360dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/background_pencarian"
+                android:drawableLeft="@drawable/logo_cari"
+                android:elevation="@dimen/_20sdp"
+                android:hint="Cari Lowongan"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/stroke"
+
+
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_admin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_13sdp"
+                                android:src="@drawable/pcadmin" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Admin">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_bank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/bank" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Bank">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_kurir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_11sdp"
+                                android:src="@drawable/kurir" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Kurir">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_guru"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_11sdp"
+                                android:src="@drawable/guru" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Guru">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/btn_teknologi_informasi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/pc" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Teknologi\nInformasi"
+                                android:textAlignment="center">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_staff_restorant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/restoran" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Restorant\nStaff"
+                                android:textAlignment="center">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_tenaga_kesehatan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/hospital" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Tenaga\nKesehatan"
+                                android:textAlignment="center">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/btn_other"
+                                android:layout_width="@dimen/_55sdp"
+                                android:layout_height="@dimen/_45sdp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/cicrle_shape_other"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/other4" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Lainnya"
+                                android:textAlignment="center">
+
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_lowongan_terbaru"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingLeft="15dp"
+                    android:text="Lowongan terbaru"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_detail"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_65sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingLeft="15dp"
+                    android:text="selengkapnya"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/horizontalRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rc" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingLeft="15dp"
+                    android:text="LOWONGAN REKOMENDASI"
+                    android:textColor="@color/white"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_detail2"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_65sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:paddingLeft="15dp"
+                    android:text="selengkapnya"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:orientation="vertical">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/horizontalRecyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_rc2" />
+
+
+                <TextView
+                    android:id="@+id/kosong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="DATA KOSONG"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </ScrollView>
 

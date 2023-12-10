@@ -11,8 +11,8 @@
 
 
     <ImageView
-        android:layout_width="190dp"
-        android:layout_height="180dp"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_130sdp"
         android:src="@drawable/logo"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,11 +25,12 @@
         android:layout_height="wrap_content"
         android:text=" REGISTRASI "
         android:gravity="center"
-        android:textSize="25sp"
+        android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         android:textColor="@color/white"
         android:id="@+id/ucapan"
+        android:layout_marginTop="@dimen/_24sdp"
         />
 
     <LinearLayout
@@ -48,16 +49,16 @@
             android:layout_height="wrap_content"
             android:text="Username"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="@dimen/_25sdp"
             android:background="@drawable/shape"
-
+android:textColor="@color/black"
             android:textColorHint="@color/black"
-            android:paddingLeft="10dp"
+            android:paddingLeft="@dimen/_7sdp"
             android:inputType="text"
             android:id="@+id/txtusername"
 
@@ -69,95 +70,41 @@
             android:layout_height="wrap_content"
             android:text="Password"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="30dp"
-
+android:textColor="@color/black"
             android:paddingLeft="10dp"
             android:textColorHint="@color/black"
             android:background="@drawable/shape"
             android:inputType="textPassword"
             android:id="@+id/txtpassword"
-
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="nama lengkap"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            android:background="@drawable/shape"
-            android:inputType="text"
-            android:id="@+id/txtnama_lengkap"
+            android:drawableEnd="@drawable/visibility_off"
+            android:paddingEnd="@dimen/_10sdp"
 
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="no telpon"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            android:background="@drawable/shape"
-            android:inputType="number"
-            android:id="@+id/txtno_telp"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="alamat"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            android:background="@drawable/shape"
-            android:inputType="text"
-            android:id="@+id/txtalamat"
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="email"
             android:textColor="@color/white"
-            android:textSize="15sp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-
-            android:paddingLeft="10dp"
+            android:layout_height="@dimen/_26sdp"
+            android:paddingLeft="@dimen/_7sdp"
             android:textColorHint="@color/black"
             android:background="@drawable/shape"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
             android:id="@+id/txtemail"
             android:autofillHints="emailAddress"
             />
@@ -170,20 +117,40 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="280dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_40sdp"
         app:layout_constraintTop_toBottomOf="@id/layoutinput"
         android:id="@+id/btnregis"
-        android:text="Registrasi"
-        android:textSize="20sp"
+        android:text="Berikutnya"
+        android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toEndOf="@+id/btnkembali"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
         android:textColor="@color/white"
-        app:cornerRadius="10dp"
+        app:cornerRadius="@dimen/_8sdp"
         app:strokeColor="@color/white"
-        app:strokeWidth="4dp"
+        app:strokeWidth="@dimen/_3sdp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        >
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintTop_toBottomOf="@id/layoutinput"
+        android:id="@+id/btnkembali"
+        android:text="kembali"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+       app:layout_constraintEnd_toStartOf="@+id/btnregis"
+app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/_3sdp"
         style="@style/Widget.Material3.Button.OutlinedButton"
         >
 

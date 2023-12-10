@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_gravity="center|top"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_width="@dimen/_90sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/garis_tepi" />
+
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_gravity="center|end"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="-30dp"
+        android:layout_width="@dimen/_30sdp"
+        android:src="@drawable/cancel" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:fontFamily="@font/poppinssemibold"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_width="wrap_content"
+        android:text="bidang pekerjaan"
+        android:textColor="@color/biru"
+        android:textSize="@dimen/_15sdp">
+
+
+    </com.google.android.material.textview.MaterialTextView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_list_kategori1"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_300sdp"
+        android:padding="@dimen/_4sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_list_kategori">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

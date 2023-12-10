@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/stroke"
     android:backgroundTint="@color/biru">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,10 +26,21 @@
 
             <ImageView
                 android:id="@+id/logo2"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="@dimen/_6sdp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/logo2"
+                android:layout_below="@id/kategori2"
+                android:layout_marginTop="@dimen/_26sdp"
+                android:layout_marginStart="@dimen/_60sdp"
+                android:background="@drawable/love_white"
+                android:id="@+id/btn_simpan_home2"/>
 
 
             <TextView
@@ -37,40 +48,53 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/logo2"
+                android:textColor="@color/black"
                 android:alpha="0.7"
                 android:text="nama perusahaan"
+                android:layout_marginBottom="@dimen/_7sdp"
                 android:textSize="10sp"/>
 
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/alamat_peru2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nama_peru2"
                 android:alpha="0.7"
                 android:text="alamat perusahaan"
-                android:textSize="10sp"/>
+                android:textSize="10sp"/>-->
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/title_peru2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/alamat_peru2"
                 android:alpha="0.7"
                 android:text="pendidikan"
-                android:textSize="10sp"
-                android:layout_marginBottom="15dp"/>
+                android:textSize="10sp"/>-->
 
-            <ImageView
+            <TextView
+                android:id="@+id/pekerjaan2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/like"
-                android:layout_toRightOf="@+id/title_peru2"
-                android:layout_alignTop="@+id/alamat_peru2"
-                android:layout_marginStart="200dp"
-                android:id="@+id/btnsimpan"/>
+                android:layout_toEndOf="@+id/logo2"
+                android:alpha="0.7"
+                android:textColor="@color/black"
+                android:text="pekerjaan"
+                android:textSize="10sp"
+                android:layout_marginStart="@dimen/_10sdp"/>
 
-
+            <TextView
+                android:id="@+id/kategori2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/logo2"
+                android:layout_below="@+id/pekerjaan2"
+                android:alpha="0.7"
+                android:textColor="@color/black"
+                android:text="kategori pekerjaan"
+                android:textSize="10sp"
+                android:layout_marginStart="@dimen/_10sdp"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

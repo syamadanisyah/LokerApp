@@ -14,12 +14,6 @@ public class UserModel {
     @Expose
     @SerializedName("password")
     private String password;
-    @Expose
-    @SerializedName("nama_lengkap")
-    private String nama_lengkap;
-    @Expose
-    @SerializedName("no_telp")
-    private String no_telp;
 
     @Expose
     @SerializedName("alamat")
@@ -30,6 +24,13 @@ public class UserModel {
     @SerializedName("email")
     private String email;
 
+    @Expose
+    @SerializedName("nama_lengkap")
+    private String nama_lengkap;
+    @Expose
+    @SerializedName("no_telp")
+    private String no_telp;
+
    /* @Expose
     @SerializedName("level")
     private String level;*/
@@ -38,17 +39,8 @@ public class UserModel {
     @SerializedName("user_photo")
     private String userPhoto;*/
 
-    public UserModel(String id_pelamar, String username, String password, String nama_lengkap, String no_telp, String alamat, String email) {
-        this.id_pelamar = id_pelamar;
-        this.username = username;
-        this.password = password;
-        this.nama_lengkap = nama_lengkap;
-        this.no_telp = no_telp;
-        this.alamat = alamat;
-        this.email = email;
-    }
 
-    public String getId_pelamar() {
+    public String   getId_pelamar() {
         return id_pelamar;
     }
 

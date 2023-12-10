@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    tools:context="list_kategori.list_kategori">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center|top"
+            android:scaleType="centerCrop"
+            android:src="@drawable/garis_tepi" />
+
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center|end"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/cancel" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="bidang pekerjaan"
+            android:textColor="@color/biru"
+            android:textSize="@dimen/_15sdp">
+
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_4sdp">
+
+
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear1"
+                 android:padding="@dimen/_5sdp"
+
+                 >
+                 <ImageView
+                     android:padding="@dimen/_14sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/pcadmin" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Admin"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+              &lt;!&ndash;   <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/bank" />
+
+                 <ImageView
+                     android:padding="@dimen/_13sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/kurir"
+                     />
+
+                 <ImageView
+                     android:padding="@dimen/_13sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/kategori" />&ndash;&gt;
+
+
+             </LinearLayout>
+
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:padding="@dimen/_5sdp"
+                 android:id="@+id/linear2"
+                 >
+
+                 <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/bank"/>
+
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Bank"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+             </LinearLayout>
+
+
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear3"
+                 android:padding="@dimen/_5sdp"
+                 >
+
+                 <ImageView
+                     android:padding="@dimen/_13sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/kurir"
+                     />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Kurir"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+
+             </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear4"
+                 android:padding="@dimen/_5sdp"
+                 >
+
+
+                 <ImageView
+                     android:padding="@dimen/_13sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/guru" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Guru"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+
+             </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear5"
+                 android:padding="@dimen/_5sdp"
+                 >
+
+                 <ImageView
+                     android:padding="@dimen/_7sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/pc" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="IT"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+             </LinearLayout>
+
+
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear6"
+                 android:padding="@dimen/_5sdp"
+                 >
+
+
+                 <ImageView
+                     android:padding="@dimen/_12sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/restoran" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Restorant"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+
+             </LinearLayout>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:id="@+id/linear7"
+                 android:padding="@dimen/_5sdp"
+                 >
+
+
+                 <ImageView
+                     android:padding="@dimen/_12sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/penyanyi" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Penyanyi"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_50sdp"
+                     android:textSize="@dimen/_15sdp"
+                     android:fontFamily="@font/poppinssemibold"
+                     android:textColor="@color/biru"
+                     />
+
+
+             </LinearLayout>-->
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_marginTop="@dimen/_30sdp"
+                 android:id="@+id/linear30"
+                 >
+
+
+                 <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/other4" />
+
+
+                 <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/other4" />
+
+
+                 <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/other4" />
+
+
+                 <ImageView
+                     android:padding="@dimen/_10sdp"
+                     android:layout_width="@dimen/_55sdp"
+                     android:layout_height="@dimen/_45sdp"
+                     android:layout_gravity="center"
+                     android:layout_marginStart="@dimen/_20sdp"
+                     android:background="@drawable/cicrle_shape_other"
+                     android:src="@drawable/other4" />
+
+
+             </LinearLayout>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_list_kategori"
+                android:layout_width="@dimen/_300sdp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_list_kategori" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

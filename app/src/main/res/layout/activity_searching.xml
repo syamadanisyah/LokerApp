@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biru"
+    tools:context=".cari.searching">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_searching"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_marginTop="-60dp"
+        android:background="@color/white"
+        app:cardCornerRadius="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/logo" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/background_pencarian"
+        android:drawableLeft="@drawable/logo_cari"
+        android:elevation="@dimen/_20sdp"
+        android:hint="Cari Lowongan"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_searching"
+        android:id="@+id/searching"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/searching"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/rc_searching"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_rc_searching">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="data kosong"
+    android:textColor="@color/white"
+    android:gravity="center"
+    android:textSize="@dimen/_35sdp"
+    android:fontFamily="@font/poppinssemibold"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/searching"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

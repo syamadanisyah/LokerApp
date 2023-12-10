@@ -1,10 +1,10 @@
 package com.c3.lokerapp.Home;
 
-public class item1_layout {
+public class item1_layout_gagal {
 int img;
 String nama_peru,alamat_peru,jam_ker,title,usia,jenis_kelamin,pengalaman,diskripsi,kualifikasi,jadwal,jam;
 
-    public item1_layout(int img, String nama_peru, String alamat_peru, String jam_ker, String title, String usia, String jenis_kelamin, String pengalaman, String diskripsi, String kualifikasi, String jadwal, String jam) {
+    public item1_layout_gagal(int img, String nama_peru, String alamat_peru, String jam_ker, String title, String usia, String jenis_kelamin, String pengalaman, String diskripsi, String kualifikasi, String jadwal, String jam) {
         this.img = img;
         this.nama_peru = nama_peru;
         this.alamat_peru = alamat_peru;

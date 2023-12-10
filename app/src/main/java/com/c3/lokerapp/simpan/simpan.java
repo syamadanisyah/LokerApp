@@ -1,6 +1,7 @@
 package com.c3.lokerapp.simpan;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,9 +15,17 @@ import android.widget.Toast;
 import com.c3.lokerapp.Home.item1;
 import com.c3.lokerapp.R;
 import com.c3.lokerapp.detail_pekerjaan;
+import com.c3.lokerapp.koneksi.RetrofitClient;
+import com.c3.lokerapp.koneksi.RetrofitEndPoint;
+import com.c3.lokerapp.koneksi.UserModel;
+import com.c3.lokerapp.util.UserUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,9 +74,6 @@ public class simpan extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public simpan() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -95,6 +101,62 @@ public class simpan extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+//    UserUtil util = new UserUtil(getContext());
+
+//    String id_pelamar = util.getId();
+
+    private void getDataSimpan() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("prefLogin", getContext().MODE_PRIVATE);
+        String id_pelamar = sharedPreferences.getString("id_pelamar", "");
+        RetrofitClient.getInstance().menampilkanfavorit(id_pelamar).enqueue(new Callback<FavoritRespon>() {
+            @Override
+            public void onResponse(Call<FavoritRespon> call, Response<FavoritRespon> response) {
+                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
+
+                    List<model_favorit> favorit = response.body().getData();
+                    adapter_simpan as = new adapter_simpan(requireContext(),favorit, new adapter_simpan.pindah() {
+                        @Override
+                        public void onItemClick(int position) {
+                            startActivity(new Intent(getActivity(), detail_pekerjaan.class));
+                            {
+                                String nama = favorit.get(position).getNama();
+                                String pekerjaan = favorit.get(position).getJudul_post();
+                                String kategori = favorit.get(position).getId_kategori();
+                                String diskripsi = favorit.get(position).getDeskripsi_post();
+                                String id_post = favorit.get(position).getId_post();
+
+//ok disconnect en anydec oke siap
+                                Intent intent = new Intent(getActivity(), detail_pekerjaan.class);
+                                intent.putExtra("nama", nama);
+                                intent.putExtra("judul_post", pekerjaan);
+                                intent.putExtra("id_kategori", kategori);
+                                intent.putExtra("deskripsi_post", diskripsi);
+                                intent.putExtra("id_post", id_post);
+                                Toast.makeText(getActivity(), "deskripsi nde adapter : " + diskripsi, Toast.LENGTH_SHORT).show();
+                                getActivity().startActivity(intent);
+
+                            }
+                        }
+                    });
+
+                    recview_simpan.setAdapter(as);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<FavoritRespon> call, Throwable t) {
+
+            }
+        });
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        getDataSimpan();
+
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -106,7 +168,7 @@ public class simpan extends Fragment {
 
         data_item = data_item();
 
-        adapter_s = new adapter_simpan(data_item, new adapter_simpan.pindah() {
+       /* adapter_s = new adapter_simpan(data_item, new adapter_simpan.pindah() {
 
             @Override
             public void onItemClick(int position) {
@@ -116,9 +178,10 @@ public class simpan extends Fragment {
 
 
             }
-        });
-        recview_simpan.setAdapter(adapter_s);
+        });*/
+        // recview_simpan.setAdapter(adapter_s);
         // Inflate the layout for this fragment
+        getDataSimpan();
         return pindah;
 
     }

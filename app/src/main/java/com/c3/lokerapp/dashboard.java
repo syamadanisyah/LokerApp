@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 
 import com.c3.lokerapp.Home.home;
+import com.c3.lokerapp.akun.akun;
 import com.c3.lokerapp.simpan.simpan;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -44,4 +45,9 @@ getSupportFragmentManager().beginTransaction()
         .replace(R.id.frame,new home()).commit();
 
     }
+
+    public void onBackPressed(){
+
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.c3.lokerapp.google;
+package com.c3.lokerapp.Home.google;
 
 import android.content.Intent;
 import android.widget.Toast;

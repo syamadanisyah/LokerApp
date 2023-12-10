@@ -5,20 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.c3.lokerapp.google.GoogleUsers;
+import com.c3.lokerapp.Home.google.GoogleUsers;
 import com.c3.lokerapp.koneksi.RetrofitClient;
+import com.c3.lokerapp.koneksi.UserModel;
 import com.c3.lokerapp.koneksi.UsersResponse;
+import com.c3.lokerapp.util.UserUtil;
 import com.google.android.material.button.MaterialButton;
 
 import retrofit2.Call;
@@ -33,8 +35,11 @@ public class Login extends AppCompatActivity {
 
     private GoogleUsers googleUsers;
 
+    TextView lupapass;
+
     ImageView btngoogle;
 
+TextView tvReg;
 
     boolean passwordvisible;
 
@@ -42,12 +47,33 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         googleUsers = new GoogleUsers(this);
 
         user = findViewById(R.id.txtusernamelog);
         pass = findViewById(R.id.txtpasswordlog);
         btnlogin = findViewById(R.id.btnlogin);
+        tvReg = findViewById(R.id.tv_registrasi);
 
+        lupapass = findViewById(R.id.txtlupapassword);
+
+
+        lupapass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this,lupa_password1.class));
+            }
+        });
+
+
+
+        tvReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pindah();
+            }
+        });
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,9 +89,23 @@ public class Login extends AppCompatActivity {
 
                                     Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_SHORT).show();
 
-
+                                    // meyimpan data ke local agar tidak login lagi (session)
+//                                    UserUtil util = new UserUtil(Login.this, response.body().getData());
+//                                    UserModel  om = new UserModel();
+//                                    om.setId_pelamar(response.body().getData().getId_pelamar());
+                                    Toast.makeText(Login.this, "id = "+response.body().getData().getId_pelamar(), Toast.LENGTH_SHORT).show();
+                                    Intent pindah = new Intent(Login.this, dashboard.class);
+                                    UserModel user = response.body().getData();
+                                    editor.putString("id_pelamar", user.getId_pelamar());
+                                    editor.putString("nama_lengkap", user.getNama_lengkap());
+                                    editor.putString("username", user.getUsername());
+                                    editor.putString("password", user.getPassword());
+                                    editor.putString("no_telp", user.getNo_telp());
+                                    editor.putString("Alamat", user.getAlamat());
+                                    editor.putString("Email", user.getEmail());
+                                    editor.apply();
                                     // jajalen login
-                                    startActivity(new Intent(Login.this, dashboard.class)); // iki ne sg salah
+                                    startActivity(pindah); // iki ne sg salah
                                 } else {
                                     Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
@@ -142,6 +182,11 @@ public class Login extends AppCompatActivity {
 
     }
 
+    private void pindah() {
+        Intent i = new Intent(this, registrasi.class);
+        startActivity(i);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -154,6 +199,18 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<UsersResponse> call, Response<UsersResponse> response) {
                     if(response.body() != null && response.body().getStatus().equalsIgnoreCase("success")){
+                        // meyimpan data ke local agar tidak login lagi (session)
+                        SharedPreferences sharedPreferences = getSharedPreferences("prefLogin", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        UserModel user = response.body().getData();
+                        editor.putString("id_pelamar", user.getId_pelamar());
+                        editor.putString("nama_lengkap", user.getNama_lengkap());
+                        editor.putString("username", user.getUsername());
+                        editor.putString("password", user.getPassword());
+                        editor.putString("no_telp", user.getNo_telp());
+                        editor.putString("alamat", user.getAlamat());
+                        editor.putString("email", user.getEmail());
+                        editor.apply();
                         startActivity(new Intent(Login.this, dashboard.class));
 
                     }else{

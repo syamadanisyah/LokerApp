@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biru"
+    tools:context=".lengkap"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_guru_atas"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_guru_atas"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-25dp"
+        android:background="@drawable/background_pencarian"
+        android:drawableLeft="@drawable/logo_cari"
+        android:elevation="@dimen/_20sdp"
+        android:hint="Cari Lowongan"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_guru_atas"
+android:id="@+id/searching_lengkap"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_462sdp"
+        app:layout_constraintTop_toBottomOf="@id/cv_guru_atas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingTop="@dimen/_19sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:id="@+id/recyclerview_lengkap"
+        tools:listitem="@layout/item_lv_kategori"
+
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

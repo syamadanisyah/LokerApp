@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biru"
+    tools:context=".akun.edit_akun">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biru"
+        tools:context=".akun.edit_akun">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_judul"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradasi_edit_akun">
+
+                <ImageView
+                    android:id="@+id/btn_kembali_profile"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:src="@drawable/arrow_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:text="detail akun profile"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_kembali_profile"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/profile_foto"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_105sdp"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@drawable/shape"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_judul"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="@dimen/_4sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+        <!--username-->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="username :"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/cv_username"
+            app:layout_constraintStart_toStartOf="@+id/cv_username"
+            >
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_username"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_37sdp"
+            android:layout_marginTop="@dimen/_37sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_foto"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="@dimen/_247sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                </EditText>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!--nama lengkap-->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="nama lengkap :"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toTopOf="@id/cv_nama_lengkap"
+            app:layout_constraintStart_toStartOf="@+id/cv_nama_lengkap"
+            app:layout_constraintTop_toBottomOf="@+id/cv_username"
+            android:id="@+id/nama_lengkap"
+            >
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_nama_lengkap"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_37sdp"
+            app:layout_constraintStart_toStartOf="@id/cv_username"
+
+
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/cv_username"
+            app:layout_constraintTop_toBottomOf="@+id/nama_lengkap"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+
+                <EditText
+                    android:id="@+id/et_nama_lengkap"
+                    android:layout_width="@dimen/_247sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                </EditText>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!--email-->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppinsbold"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Email :"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/cv_email"
+            app:layout_constraintStart_toStartOf="@+id/cv_email"
+            app:layout_constraintTop_toBottomOf="@+id/cv_nama_lengkap"
+            android:id="@+id/email"
+            >
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_email"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_37sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/cv_nama_lengkap"
+            app:layout_constraintStart_toStartOf="@id/cv_nama_lengkap"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="@dimen/_247sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp">
+
+                </EditText>
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--alamat-->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppinsbold"
+            android:text="alamat:"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/cv_alamat"
+            app:layout_constraintStart_toStartOf="@id/cv_alamat"
+            app:layout_constraintTop_toBottomOf="@+id/cv_email"
+            android:id="@+id/alamat"
+            >
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_alamat"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="@id/cv_email"
+            app:layout_constraintStart_toStartOf="@+id/cv_email"
+            app:layout_constraintTop_toBottomOf="@+id/alamat"
+            app:strokeColor="@color/grey"
+            app:strokeWidth="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+
+                <EditText
+                    android:id="@+id/et_alamat"
+                    android:layout_width="@dimen/_245sdp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:maxLines="10"
+                    />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cv_alamat"
+            app:layout_constraintRight_toRightOf="@+id/cv_alamat"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:backgroundTint="@color/hijau"
+            app:strokeColor="@color/white"
+            android:text="simpan"
+            android:textColor="@color/white"
+            app:strokeWidth="@dimen/_2sdp"
+            android:id="@+id/btn_edit_akun"
+            >
+
+
+        </com.google.android.material.button.MaterialButton>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
