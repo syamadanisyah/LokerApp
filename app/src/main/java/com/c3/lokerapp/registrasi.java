@@ -36,7 +36,7 @@ public class registrasi extends AppCompatActivity {
         dialog.show();
     }
 
-    MaterialButton btn;
+    MaterialButton btn,kembali1;
     EditText user, passw, nama, noTelp, alamat, email;
 
     boolean passwordvisible;
@@ -48,8 +48,14 @@ public class registrasi extends AppCompatActivity {
 
         user = findViewById(R.id.txtusername);
         passw = findViewById(R.id.txtpassword);
-
+kembali1 = findViewById(R.id.btnkembali);
         email = findViewById(R.id.txtemail);
+
+
+        kembali1.setOnClickListener(view -> {
+            onBackPressed();
+            overridePendingTransition(R.anim.layout_in,R.anim.layout_out);
+        });
 
 
         passw.setOnTouchListener(new View.OnTouchListener() {
@@ -182,4 +188,5 @@ public class registrasi extends AppCompatActivity {
 
 
     }
+
 }

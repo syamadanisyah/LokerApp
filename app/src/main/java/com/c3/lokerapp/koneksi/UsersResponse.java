@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class UsersResponse {
 
+    //response model berdasarkan model yang di gunakan
     @Expose
     @SerializedName("status")
     private String status;

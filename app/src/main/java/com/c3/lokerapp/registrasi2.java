@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class registrasi2 extends AppCompatActivity {
 
-    MaterialButton btn2;
+    MaterialButton btn2, kembali2;
     EditText nama_lengkap, no_telp, alamat;
 
     @Override
@@ -35,7 +35,12 @@ public class registrasi2 extends AppCompatActivity {
         nama_lengkap = findViewById(R.id.txtnama_lengkap);
         no_telp = findViewById(R.id.txtno_telp);
         alamat = findViewById(R.id.txtalamat);
+kembali2 = findViewById(R.id.btnkembali2);
 
+kembali2.setOnClickListener(view -> {
+    onBackPressed();
+    overridePendingTransition(R.anim.layout_in,R.anim.layout_out);
+});
 
         //dari activity pertama simpan dulu menggunakan key code "SAVE" lalu di panggil di activity kedua menggunakan DataShared,
         //kalau manggil di kelas ini menggunakan component TextView aja
@@ -157,6 +162,9 @@ public class registrasi2 extends AppCompatActivity {
 
         });
 
+
+    }
+    public void onBackPressed(){
 
     }
 }

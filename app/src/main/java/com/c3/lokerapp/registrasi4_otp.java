@@ -56,4 +56,7 @@ public class registrasi4_otp extends AppCompatActivity {
         });
 
     }
+    public void onBackPressed(){
+
+    }
 }

@@ -47,6 +47,8 @@ public class adapterKategori extends RecyclerView.Adapter<adapterKategori.viewho
     }
 
 
+    //mempunyai kode fungsi yang sama semua seperti adapter1
+
     @NonNull
     @Override
     public adapterKategori.viewholderKategori onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

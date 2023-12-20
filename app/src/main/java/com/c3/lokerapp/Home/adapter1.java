@@ -61,6 +61,7 @@ public class adapter1 extends RecyclerView.Adapter<adapter1.viewholder1> {
             holder.kategori_pekerjaan.setText(listitem.getId_kategori());
         }
 
+        //menampilkan gambar dalam model item reyclerview
         Glide.with(context)
                 .load( listitem.getFoto())
                 .centerCrop()
@@ -194,6 +195,8 @@ public class adapter1 extends RecyclerView.Adapter<adapter1.viewholder1> {
 
         public viewholder1(@NonNull View itemView) {
             super(itemView);
+
+            //untuk menginisiasi design component
             btn_simpan1 = itemView.findViewById(R.id.btn_simpan_home);
             txt_nama = itemView.findViewById(R.id.nama_peru);
             pekerjaan = itemView.findViewById(R.id.pekerjaan);

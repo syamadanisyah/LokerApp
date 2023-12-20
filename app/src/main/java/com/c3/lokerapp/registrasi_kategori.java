@@ -16,8 +16,12 @@ import com.c3.lokerapp.koneksi.DetailResponse;
 import com.c3.lokerapp.koneksi.RetrofitClient;
 import com.c3.lokerapp.koneksi.RetrofitEndPoint;
 import com.c3.lokerapp.koneksi.UsersResponse;
+import com.c3.lokerapp.list_kategori.KategoriLainnyaModel;
+import com.c3.lokerapp.list_kategori.ResponseModelKategoriLainnya;
 import com.c3.lokerapp.shared.DataShared;
 import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +34,9 @@ public class registrasi_kategori extends AppCompatActivity {
     Spinner pilih1, pilih2;
 
     private String idPelamar = "";
+
+    ArrayAdapter<String> spinnerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,6 +139,40 @@ public class registrasi_kategori extends AppCompatActivity {
             });
         });
 
+        spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, new ArrayList<>());
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        pilih1.setAdapter(spinnerAdapter);
+        pilih2.setAdapter(spinnerAdapter);
+
+// jajalen :v oke :
+        RetrofitClient.getInstance().ambil_kate_db().enqueue(new Callback<ResponseModelKategoriLainnya>() {
+            @Override
+            public void onResponse(Call<ResponseModelKategoriLainnya> call, Response<ResponseModelKategoriLainnya> response) {
+                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
+                    ArrayList<KategoriLainnyaModel> models = response.body().getData();
+
+                    ArrayList<String> kategori = new ArrayList<>();
+                    for(KategoriLainnyaModel model : models){
+                        kategori.add(model.getKategori());
+                    }
+
+                    // tampilkan spinner berdasarkan models : ketiken dewe :v ngelag anydesk e :) ws ngene tok? sng ngisor kode lama di hps ora?
+                    // iyo dihapus ae
+                    spinnerAdapter.addAll(kategori);
+                    spinnerAdapter.notifyDataSetChanged();
+                    // build di run? iyo ok
+
+
+                } else {
+                    Toast.makeText(registrasi_kategori.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseModelKategoriLainnya> call, Throwable t) {
+                Toast.makeText(registrasi_kategori.this, "Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 

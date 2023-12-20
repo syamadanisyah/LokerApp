@@ -14,6 +14,10 @@ import retrofit2.http.Query;
 
 public interface RetrofitEndPoint {
 
+
+
+    //tempat endpoint yang di panggil
+
     @FormUrlEncoded
     @POST("registrasi.php")
     Call<UsersResponse> registerCaker(
@@ -166,16 +170,21 @@ public interface RetrofitEndPoint {
 
     @GET("ambil_data_id_pelamar.php")
     Call<UsersResponse> ambil_id_pelamar(
-      @Query("email") String email
+            @Query("email") String email
     );
-@FormUrlEncoded
+
+    @FormUrlEncoded
     @POST("edit_akun.php")
     Call<UsersResponse> edit_akun(
-      @Field("id_pelamar") String id_pelamar,
-      @Field("username") String username,
-      @Field("nama_lengkap") String nama_lengkap,
-      @Field("alamat") String alamat,
-      @Field("email") String email
+            @Field("id_pelamar") String id_pelamar,
+            @Field("username") String username,
+            @Field("nama_lengkap") String nama_lengkap,
+            @Field("alamat") String alamat,
+            @Field("email") String email
+    );
+
+    @GET("ambil_kategori.php")
+    Call<ResponseModelKategoriLainnya> ambil_kate_db(
     );
 
  /*   @FormUrlEncoded

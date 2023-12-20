@@ -77,6 +77,8 @@ public class adapter2 extends RecyclerView.Adapter<adapter2.viewholder2> {
         String id_pelamar = sharedPreferences.getString("id_pelamar", "");
 
 
+        //memanggil endpoint cek favorit
+
         RetrofitClient.getInstance().cekfavorit(id_pelamar,listitem2.getId_post()).enqueue(new Callback<DetailResponse>() {
             @Override
             public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {

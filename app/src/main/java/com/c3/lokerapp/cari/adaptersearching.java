@@ -50,6 +50,10 @@ public class adaptersearching extends RecyclerView.Adapter<adaptersearching.view
         return new viewholdersearching(flater);
     }
 
+
+
+    //item jika di click maka
+
     @Override
     public void onBindViewHolder(@NonNull adaptersearching.viewholdersearching holder, int position) {
         model_data_searching sq = viewitem.get(position);
@@ -61,15 +65,18 @@ public class adaptersearching extends RecyclerView.Adapter<adaptersearching.view
 
         }
 
+        //kode untuk menampilkan gambar pada recyclerview
         Glide.with(context)
                 .load(RetrofitClient.BASE_URL+sq.getFoto())
                 .centerCrop()
                 .placeholder(R.drawable.logo)
                 .into(holder.logo_perusahaan_searching);
 
+        //data yang di ambil sesuai endpoint
         SharedPreferences sharedPreferences = holder.itemView.getContext().getSharedPreferences("prefLogin", holder.itemView.getContext().MODE_PRIVATE);
         String id_pelamar = sharedPreferences.getString("id_pelamar", "");
 
+        //memanggil endpoint
         RetrofitClient.getInstance().cekfavorit(id_pelamar, sq.getId_post()).enqueue(new Callback<DetailResponse>() {
             @Override
             public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {
@@ -85,6 +92,7 @@ public class adaptersearching extends RecyclerView.Adapter<adaptersearching.view
             }
         });
 
+        //tombol untuk menyimpan postingan di fitur favorit
         holder.btn_simpan_searching.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +115,8 @@ public class adaptersearching extends RecyclerView.Adapter<adaptersearching.view
 
             }
         });
+
+
         // Listener untuk menampilkan detail pekerjaan
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +158,7 @@ public class adaptersearching extends RecyclerView.Adapter<adaptersearching.view
         public viewholdersearching(@NonNull View itemView) {
             super(itemView);
 
-
+            //deklarasi component xml
             logo_perusahaan_searching = itemView.findViewById(R.id.logo_perusahaan_searching);
             btn_simpan_searching = itemView.findViewById(R.id.btnsimpansearching);
             nama_perusahaan_searching = itemView.findViewById(R.id.nama_peru_searching);

@@ -138,6 +138,10 @@ public class home extends Fragment {
         }
     }
 
+
+
+    //method untuk memanggil data dari database lalu di munculkan melalui recyclerview dan memanggil endpoint "gunakandataspinner"
+
     private void getDataFromAPI2() {
         if (isAdded()){
             RetrofitEndPoint endpoint2 = RetrofitClient.getInstance();
@@ -383,6 +387,8 @@ public class home extends Fragment {
     private View view1;
     private RecyclerView recyclerViewKategori;
 
+
+    //method untuk memunculkan bottomsheet beserta memanggil endpoint "kategorilainnya"
     private void showbottomsheet() {
         BottomSheetDialog sheet = new BottomSheetDialog(requireContext(), R.style.BottomSheetTheme);
         View sheetInflater = getLayoutInflater().inflate(R.layout.fragment_botton_seet, null);

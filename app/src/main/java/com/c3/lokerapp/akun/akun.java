@@ -21,8 +21,10 @@ import com.c3.lokerapp.R;
 import com.c3.lokerapp.koneksi.DetailResponse;
 import com.c3.lokerapp.koneksi.RetrofitClient;
 import com.c3.lokerapp.koneksi.RetrofitEndPoint;
+import com.c3.lokerapp.koneksi.UsersResponse;
 import com.c3.lokerapp.list_kategori.KategoriLainnyaModel;
 import com.c3.lokerapp.list_kategori.ResponseModelKategoriLainnya;
+import com.c3.lokerapp.registrasi_kategori;
 import com.c3.lokerapp.shared.DataShared;
 import com.c3.lokerapp.util.UserUtil;
 import com.google.android.material.button.MaterialButton;
@@ -90,6 +92,8 @@ public class akun extends Fragment {
     Spinner spin1, spin2;
     RecyclerView recyclerview2;
 
+    ArrayAdapter<String> spinnerAdapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -100,7 +104,7 @@ public class akun extends Fragment {
 
         btn_edit = tampilan.findViewById(R.id.edit);
 
-
+//menginisiasi component pada design berdasarkan idnya
         btn_logout = tampilan.findViewById(R.id.logout);
         username = tampilan.findViewById(R.id.username_profile);
         nama_lengkap = tampilan.findViewById(R.id.nama_lengkap_profile);
@@ -138,7 +142,7 @@ public class akun extends Fragment {
             public void onClick(View view) {
                 Intent i = new Intent(requireActivity(), edit_akun.class);
                 startActivity(i);
-                getActivity().overridePendingTransition(R.anim.layout_in,R.anim.layout_out);
+                getActivity().overridePendingTransition(R.anim.layout_in, R.anim.layout_out);
             }
         });
 
@@ -151,7 +155,7 @@ public class akun extends Fragment {
                 util.signOut();
                 BersihkanAkun();
                 startActivity(new Intent(requireActivity(), Login.class));
-                getActivity().overridePendingTransition(R.anim.layout_in,R.anim.layout_out);
+                getActivity().overridePendingTransition(R.anim.layout_in, R.anim.layout_out);
             }
         });
 
@@ -159,41 +163,52 @@ public class akun extends Fragment {
         spin1 = tampilan.findViewById(R.id.spinner1);
         spin2 = tampilan.findViewById(R.id.spinner2);
 
-        ArrayAdapter<CharSequence> ardap1 = ArrayAdapter.createFromResource(requireContext(), R.array.kategori,
-                android.R.layout.simple_spinner_item);
 
-        ardap1.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spin1.setAdapter(ardap1);
 
-        spin1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        SharedPreferences sharedPreferences1 = this.getContext().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        DataShared dataShared = new DataShared(requireContext());
+        RetrofitEndPoint spinDb = RetrofitClient.getInstance();
+
+
+        editor.putString("spiner1", Integer.toString(spin1.getSelectedItemPosition()));
+        editor.putString("spiner2", Integer.toString(spin2.getSelectedItemPosition()));
+        editor.apply();
+
+
+        spinnerAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, new ArrayList<>());
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin1.setAdapter(spinnerAdapter);
+        spin2.setAdapter(spinnerAdapter);
+
+
+        RetrofitClient.getInstance().ambil_kate_db().enqueue(new Callback<ResponseModelKategoriLainnya>() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onResponse(Call<ResponseModelKategoriLainnya> call, Response<ResponseModelKategoriLainnya> response) {
+                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
+                    ArrayList<KategoriLainnyaModel> models = response.body().getData();
+
+                    ArrayList<String> kategori = new ArrayList<>();
+                    for(KategoriLainnyaModel model : models){
+                        kategori.add(model.getKategori());
+                    }
+
+                    // tampilkan spinner berdasarkan models : ketiken dewe :v ngelag anydesk e :) ws ngene tok? sng ngisor kode lama di hps ora?
+                    // iyo dihapus ae
+                    spinnerAdapter.addAll(kategori);
+                    spinnerAdapter.notifyDataSetChanged();
+                    // build di run? iyo ok
 
 
+                } else {
+                    Toast.makeText(requireContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-
-        ArrayAdapter<CharSequence> ardap2 = ArrayAdapter.createFromResource(requireContext(), R.array.kategori,
-                android.R.layout.simple_spinner_item);
-        ardap2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spin2.setAdapter(ardap2);
-
-        spin2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onFailure(Call<ResponseModelKategoriLainnya> call, Throwable t) {
+                Toast.makeText(requireContext(), "Error : " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 

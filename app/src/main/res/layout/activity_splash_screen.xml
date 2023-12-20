@@ -21,16 +21,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/kalimat"
-        android:text="ini kalimat biasa"
+        android:text="aplikasi penyedia lowongan pekerjaan"
         app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@+id/vectorhuman"
         android:textColor="@color/white"
         android:gravity="center"
+        android:fontFamily="@font/poppinsbold"
         android:textStyle="bold"
-        android:textSize="@dimen/_16sdp"/>
+        android:textSize="@dimen/_18sdp"/>
 
     <ImageView
 
-        android:layout_width="@dimen/_320sdp"
+        android:layout_width="@dimen/_325sdp"
         android:layout_height="@dimen/_280sdp"
         android:src="@drawable/tes"
 
@@ -38,6 +40,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kalimat" />
+        app:layout_constraintTop_toBottomOf="@+id/kalimat"
+        android:id="@+id/vectorhuman"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

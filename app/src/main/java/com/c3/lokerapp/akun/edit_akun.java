@@ -35,6 +35,7 @@ public class edit_akun extends AppCompatActivity {
         setContentView(R.layout.activity_edit_akun);
         btnkembali = findViewById(R.id.btn_kembali_profile);
 
+        //inisiasi component design
         username = findViewById(R.id.et_username);
         nama_lengkap = findViewById(R.id.et_nama_lengkap);
         email = findViewById(R.id.et_email);
@@ -74,8 +75,10 @@ public class edit_akun extends AppCompatActivity {
         String idPelamar = sharedPreferences1.getString("id_pelamar", "");
         SharedPreferences.Editor editor = sharedPreferences1.edit();
 
+        //button edit
         btnedit.setOnClickListener(view -> {
 
+            //kode untuk melakukan cek validasi data
             if (username.getText().toString().isEmpty()){
                 Toast.makeText(this, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show();
                 return;
@@ -98,6 +101,7 @@ public class edit_akun extends AppCompatActivity {
                 return;
             }
 
+            //memanggil endpoint edit akun
             RetrofitClient.getInstance().edit_akun(idPelamar, username.getText().toString(), nama_lengkap.getText().toString(), alamat.getText().toString(), email.getText().toString())
                     .enqueue(new Callback<UsersResponse>() {
                         @Override

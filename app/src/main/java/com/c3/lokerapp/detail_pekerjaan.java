@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.c3.lokerapp.koneksi.DetailResponse;
 import com.c3.lokerapp.koneksi.RetrofitClient;
+import com.c3.lokerapp.koneksi.ambil_data_det_post;
 import com.c3.lokerapp.util.UserUtil;
 import com.google.android.material.button.MaterialButton;
 
@@ -31,13 +32,14 @@ public class detail_pekerjaan extends AppCompatActivity {
     private ImageView kembali, logo_perusahaan_detail;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_pekerjaan);
 
         btnlamar = findViewById(R.id.lamar);
-
+        String idpost = getIntent().getStringExtra("id_post");
 
         nama_perusahaan = findViewById(R.id.nama_perusahaan);
         pekerjaan_det_data = findViewById(R.id.pekerjaan_det_data);
@@ -46,13 +48,12 @@ public class detail_pekerjaan extends AppCompatActivity {
         logo_perusahaan_detail = findViewById(R.id.logo_perusahaan_detail);
 
 
-
-kembali = findViewById(R.id.kembali);
+        kembali = findViewById(R.id.kembali);
         kembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
-                overridePendingTransition(R.anim.layout_in,R.anim.layout_out);
+                overridePendingTransition(R.anim.layout_in, R.anim.layout_out);
             }
         });
 
@@ -65,23 +66,45 @@ kembali = findViewById(R.id.kembali);
 
             @Override
             public void onClick(View view) {
-                RetrofitClient.getInstance().simpanfavorit(id_pelamar, getIntent().getStringExtra("id_post")).enqueue(new Callback<DetailResponse>() {
-                    @Override
-                    public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {
-                        if (response.body() != null && response.body().getMessage() == "success") {
-                            Toast.makeText(detail_pekerjaan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(detail_pekerjaan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
 
-                    @Override
-                    public void onFailure(Call<DetailResponse> call, Throwable t) {
-                        t.printStackTrace();
-                    }
-                });
+
+                RetrofitClient.getInstance().cekfavorit(id_pelamar, idpost)
+                        .enqueue(new Callback<DetailResponse>() {
+                            @Override
+                            public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {
+                                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("alreadyex")) {
+
+                                }else {
+                                    RetrofitClient.getInstance().simpanfavorit(id_pelamar, getIntent().getStringExtra("id_post"))
+                                            .enqueue(new Callback<DetailResponse>() {
+                                                @Override
+                                                public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {
+                                                    if (response.body() != null && response.body().getMessage() == "success") {
+                                                        Toast.makeText(detail_pekerjaan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                                        finish();
+                                                    } else {
+                                                        Toast.makeText(detail_pekerjaan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onFailure(Call<DetailResponse> call, Throwable t) {
+                                                    t.printStackTrace();
+                                                }
+                                            });                                }
+
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<DetailResponse> call, Throwable t) {
+
+                            }
+                        });
             }
+
         });
+
 
         ShowData();
 

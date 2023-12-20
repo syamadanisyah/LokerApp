@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserModel {
 
+    //model data
+
     @Expose
     @SerializedName("id_pelamar")
     private String id_pelamar;

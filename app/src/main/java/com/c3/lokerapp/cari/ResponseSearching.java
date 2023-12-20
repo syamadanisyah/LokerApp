@@ -8,6 +8,7 @@ import java.util.List;
 
 public class ResponseSearching {
 
+    //Respon data sesuai model data yang di ambbil dari List data
     @Expose
     @SerializedName("status")
     private String status;

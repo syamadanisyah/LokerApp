@@ -44,6 +44,9 @@ public class searching extends AppCompatActivity {
                 inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
                 if (!Objects.requireNonNull(inputEditText.getText()).toString().isEmpty()) {
+
+                    //memanggil enpoint cari
+
                     RetrofitClient.getInstance().cari(inputEditText.getText().toString()).enqueue(new Callback<ResponseSearching>() {
                         @Override
                         public void onResponse(Call<ResponseSearching> call, Response<ResponseSearching> response) {
@@ -73,6 +76,7 @@ public class searching extends AppCompatActivity {
         });
 
     }
+    //tombol kembali beserta animasi
     public void onBackPressed(){
         finish();
         overridePendingTransition(R.anim.layout_in,R.anim.layout_out);

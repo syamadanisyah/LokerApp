@@ -3,6 +3,8 @@ package com.c3.lokerapp.cari;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
+//model data yang di ambil
 public class model_data_searching {
     @Expose
     @SerializedName("id_post")

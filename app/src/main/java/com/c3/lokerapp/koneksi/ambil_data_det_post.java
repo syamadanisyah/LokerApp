@@ -32,17 +32,17 @@ private int id_akun;
 @SerializedName("kategori")
 private String id_kategori;
 
-    public ambil_data_det_post(String foto,String id_post,String logo ,String nama, String judul_post, String deskripsi_post, String link_lamar, int id_akun, String id_kategori) {
-        this.id_post = id_post;
-        this.nama = nama;
-        this.judul_post = judul_post;
-        this.deskripsi_post = deskripsi_post;
-        this.link_lamar = link_lamar;
-        this.id_akun = id_akun;
-        this.id_kategori = id_kategori;
-        this.logo = logo;
-        this.foto = foto;
-    }
+//    public ambil_data_det_post(String foto,String id_post,String logo ,String nama, String judul_post, String deskripsi_post, String link_lamar, int id_akun, String id_kategori) {
+//        this.id_post = id_post;
+//        this.nama = nama;
+//        this.judul_post = judul_post;
+//        this.deskripsi_post = deskripsi_post;
+//        this.link_lamar = link_lamar;
+//        this.id_akun = id_akun;
+//        this.id_kategori = id_kategori;
+//        this.logo = logo;
+//        this.foto = foto;
+//    }
 
 
     public String getFoto() {

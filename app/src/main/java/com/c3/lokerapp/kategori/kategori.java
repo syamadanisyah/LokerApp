@@ -26,8 +26,8 @@ public class kategori extends AppCompatActivity {
 
     public static String KATEGORI = "kategori";
 
-    public static String GURU = "5", ADMIN = "10", STAFFRESTURANT = "8", BANK = "9", KURIR = "7", PENJAGA = "4",
-            TEKNOLOGI_INFORMASI = "3", PENYANYI = "6",TENAGA_KESEHATAN = "11";
+    public static String GURU = "5", ADMIN = "6", STAFFRESTURANT = "11", BANK = "7", KURIR = "8", PENJAGA = "4",
+            TEKNOLOGI_INFORMASI = "3", PENYANYI = "6",TENAGA_KESEHATAN = "12";
 
     private RecyclerView rv_kategori;
 
