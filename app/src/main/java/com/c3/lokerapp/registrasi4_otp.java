@@ -35,6 +35,8 @@ public class registrasi4_otp extends AppCompatActivity {
         otpTextView = findViewById(R.id.votp_inp_otp);
         dataotp = getIntent().getStringExtra(OTP);
 
+        //berfungsi untuk mengecek otp dan pindah ke registrasi pilih
+
         otpTextView.setOtpListener(new OTPListener() {
 
 

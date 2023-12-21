@@ -102,15 +102,21 @@ kembali1 = findViewById(R.id.btnkembali);
         });
 
 
+
+
         btn = findViewById(R.id.btnregis);
 
         // ...
+
 
         btn.setOnClickListener(v -> {
 
             String usernameInput = user.getText().toString().trim();
             String passwordInput = passw.getText().toString().trim();
             String emailInput = email.getText().toString().trim();
+
+
+            //memanggil endpoint cekemail untuk mengecek email apakah email ada di database atau tidak ada
 
             RetrofitClient.getInstance().cekemail(emailInput).enqueue(new Callback<Responcekemail>() {
                 @Override

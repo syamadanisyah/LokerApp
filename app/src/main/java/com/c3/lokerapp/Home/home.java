@@ -155,20 +155,23 @@ public class home extends Fragment {
                 public void onResponse(Call<DetailResponse> call, Response<DetailResponse> response) {
                     if (response.isSuccessful()) {
                         List<ambil_data_det_post> data2 = response.body().getData();
-                        adapter2 adapterkedua = new adapter2(requireContext(), data2);
-                        recyclerView2.setAdapter(adapterkedua);
+                        if (isAdded()){
+                            adapter2 adapterkedua = new adapter2(requireContext(), data2);
+                            recyclerView2.setAdapter(adapterkedua);
 
-                        if (data2.size() <1){
-                            kosong.setVisibility(View.VISIBLE);
-                            recyclerView2.setVisibility(View.GONE);
-                        }else {
-                            kosong.setVisibility(View.GONE);
-                            recyclerView2.setVisibility(View.VISIBLE);
+                            if (data2.size() <1){
+                                kosong.setVisibility(View.VISIBLE);
+                                recyclerView2.setVisibility(View.GONE);
+                            }else {
+                                kosong.setVisibility(View.GONE);
+                                recyclerView2.setVisibility(View.VISIBLE);
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "erorr" + response.message(), Toast.LENGTH_SHORT).show();
+
                         }
-                    } else {
-                        Toast.makeText(getContext(), "erorr" + response.message(), Toast.LENGTH_SHORT).show();
+                        }
 
-                    }
                 }
 
                 @Override

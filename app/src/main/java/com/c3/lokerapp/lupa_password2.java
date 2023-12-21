@@ -34,6 +34,8 @@ public class lupa_password2 extends AppCompatActivity {
         otp = findViewById(R.id.votp_inp_otp);
         btnotp = findViewById(R.id.btnlp2otp);
 
+
+        //otp seperti di registrasi untuk validasi
         otp.setOtpListener(new OTPListener() {
             @Override
             public void onInteractionListener() {

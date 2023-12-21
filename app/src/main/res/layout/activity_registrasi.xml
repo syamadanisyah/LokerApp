@@ -62,8 +62,8 @@ android:textColor="@color/black"
             android:inputType="text"
             android:id="@+id/txtusername"
 
-
             />
+
 
         <TextView
             android:layout_width="wrap_content"

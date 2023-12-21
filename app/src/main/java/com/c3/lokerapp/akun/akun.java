@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.c3.lokerapp.Login;
@@ -111,12 +112,8 @@ public class akun extends Fragment {
         email = tampilan.findViewById(R.id.email_profile);
         alamat = tampilan.findViewById(R.id.alamat_profile);
 
-        // get data akun yang sedang login
-       /* UserUtil util = new UserUtil(requireContext());
-        username.setText(util.getUsername());
-        nama_lengkap.setText(util.getFullName());
-        email.setText(util.getEmail());
-        alamat.setText(util.getAlamat());*/
+
+
 
         // Mengambil instance dari SharedPreferences
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("prefLogin", Context.MODE_PRIVATE);
@@ -229,6 +226,9 @@ public class akun extends Fragment {
                 // Mengambil id_pelamar dari objek user dan menyimpannya di SharedPreferences
                 String id_pelamar = sharedPreferences.getString("id_pelamar", "");
                 editor.putString("id_pelamar", id_pelamar);
+                editor.putString("spiner1", ""+spin1.getSelectedItemPosition());
+                editor.putString("spiner2", ""+spin2.getSelectedItemPosition());
+
 
                 // Menyimpan perubahan
                 editor.apply();
@@ -266,46 +266,73 @@ public class akun extends Fragment {
         int posisi1 = Integer.parseInt(sharedPreferences.getString("spiner1", "0"));
         int posisi2 = Integer.parseInt(sharedPreferences.getString("spiner2", "0"));
 
-        spin1.setSelection(posisi1);
-        spin2.setSelection(posisi2);
+        spin1.setSelection(posisi1, true);
+        spin2.setSelection(posisi2, true);
 
-        // Mengambil id_pelamar dari objek user dan menyimpannya di SharedPreferences
-//        String id_pelamar = sharedPreferences.getString("id_pelamar", "");
-//        RetrofitClient.getInstance().spinner_tidak_berubah(id_pelamar).enqueue(new Callback<ResponseModelKategoriLainnya>() {
-//            @Override
-//            public void onResponse(Call<ResponseModelKategoriLainnya> call, Response<ResponseModelKategoriLainnya> response) {
-//                if (response.body() != null && response.body().getStatus().equalsIgnoreCase("success")) {
-//                    ArrayList<KategoriLainnyaModel> models = response.body().getData();
-//
-//                    int position = 0, position2;
-//                    String item1 = models.get(0).getKategori();
-//                    String item2 = models.get(1).getKategori();
-//
-//                    List<String> items = new ArrayList<>();
-//
-//                    // Iterate through the adapter to get all items
-//                    for (int i = 0; i < spin1.getCount(); i++) {
-//                        items.add(spin1.getItemAtPosition(0).toString());
-//                    }
-//
-//                    for (int i = 0; i < items.size(); i++) {
-//                        if (items.get(i).equals(item1)) {
-//                            position = i;
-//                            break;
-//                        }
-//                    }
-//
-//                spin1.setSelection(position);
-//            }
-//        }
-//
-//        @Override
-//        public void onFailure (Call < ResponseModelKategoriLainnya > call, Throwable t){
-//
-//        }
-//    });
+//        spin1.setSele
+//        spin2.setSelection(posisi2);
+//        String key1 = sharedPreferences.getString("spiner1", "0");
+//        String key2 = sharedPreferences.getString("spiner2", "0");
+//        getPosisi(
+//                key1,
+//                key2
+//        );
+
+//        Toast.makeText(requireContext(), key1, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(requireContext(), key2, Toast.LENGTH_SHORT).show();
+
+//String drobdown1 = sharedPreferences.getString("pilih1")
 
         return tampilan;
+    }
+
+    private String[] getAllSpinnerItemsAsStringArray(Spinner spinner) {
+        List<String> itemList = new ArrayList<>();
+
+        // Get the adapter associated with the Spinner
+        SpinnerAdapter adapter = spinner.getAdapter();
+
+        // Check if the adapter is not null
+        if (adapter != null) {
+            // Iterate through the items in the adapter
+            for (int i = 0; i < adapter.getCount(); i++) {
+                Object item = adapter.getItem(i);
+
+                // Add the item to the list
+                if (item != null) {
+                    itemList.add(item.toString());
+                }
+            }
+        }
+
+        // Convert the list to a string array
+        String[] itemsArray = new String[itemList.size()];
+        itemsArray = itemList.toArray(itemsArray);
+
+        return itemsArray;
+    }
+
+
+    private void getPosisi(String key1, String key2){
+
+        int index1 = 0, index2 = 0;
+        String[] values = getAllSpinnerItemsAsStringArray(spin1);
+        for (String data : values){
+            if (data.equalsIgnoreCase(key1)){
+                break;
+            }
+            index1++;
+        }
+
+        for (String data : values){
+            if (data.equalsIgnoreCase(key2)){
+                break;
+            }
+            index2++;
+        }
+
+        spin1.setSelection(index1);
+        spin2.setSelection(index2);
     }
 
     private void BersihkanAkun() {

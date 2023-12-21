@@ -85,9 +85,6 @@ kembali2.setOnClickListener(view -> {
                     .setPositiveButton("Benar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            // Logika yang dijalankan jika pengguna memilih "Benar"
-                            // Misalnya, lanjutkan ke langkah berikutnya atau simpan data
-                            // ...
 
                             // Tutup dialog setelah logika selesai
                             dialog.dismiss();
@@ -95,6 +92,8 @@ kembali2.setOnClickListener(view -> {
 
                             DataShared dataShared = new DataShared(registrasi2.this);
 
+                            //memanggil endpoint registrasiCaker dan menyimpan username,password,email yang di regis pertama lalu /n
+                            // data di regis pertama di simpan di regis kedua  lalu baru di simpan di database
                             RetrofitClient.getInstance().registerCaker(
                                     dataShared.getData(DataShared.KEY.SAVED_USERNAME), dataShared.getData(DataShared.KEY.SAVED_PASSWORD),
                                     nama_lengkap.getText().toString(), no_telp.getText().toString(), alamat.getText().toString(),

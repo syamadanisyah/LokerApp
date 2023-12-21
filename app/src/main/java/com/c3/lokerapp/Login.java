@@ -59,6 +59,7 @@ TextView tvReg;
         lupapass = findViewById(R.id.txtlupapassword);
 
 
+        //button untuk pindah activity lupa password
         lupapass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +69,7 @@ TextView tvReg;
 
 
 
+        //button untuk pindah ke activity registrasi
         tvReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +77,10 @@ TextView tvReg;
             }
         });
 
+
+
+        //button untuk login dan masuk ke activity home,kemudian memanggil endpoint logincaker untuk mengecek apakah username dan password
+        //seperti yang ada di database,jika benar maka akan pindah activity
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,6 +134,7 @@ TextView tvReg;
         btngoogle = findViewById(R.id.google);
 
 
+        //berfungsi untu
         btngoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
